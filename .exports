@@ -22,3 +22,8 @@ export CODE_DIR=~/source
 export LOGFORMAT=TEXT
 export DB_HOST=localhost
 #export adfenix.config.base_url=localhost:30490
+
+export ADFENIX_CONFIG_BASE_URL=http://localhost:32704
+export ADFENIX_PACKAGES_BASE_URL=http://localhost:30626
+export PROPERTIES_GRAPH_URI=http://localhost:31334
+export ORDER_SERVICE_URI=http://localhost:30557

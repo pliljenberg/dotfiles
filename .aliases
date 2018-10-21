@@ -130,6 +130,33 @@ function ecr  { eval $(aws ecr get-login | sed 's/-e none//g') }
 #
 #
 
+# Functions 
+#
+# Displays the current Git branch.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+function git-branch-current {
+
+if ! command git rev-parse 2> /dev/null; then
+  print "$0: not a repository: $PWD" >&2
+  return 1
+fi
+
+local ref="$(command git symbolic-ref HEAD 2> /dev/null)"
+
+if [[ -n "$ref" ]]; then
+  print "${ref#refs/heads/}"
+  return 0
+else
+  return 1
+fi
+
+}
+
+
 # Log
 zstyle -s ':prezto:module:git:log:medium' format '_git_log_medium_format' \
   || _git_log_medium_format='%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
@@ -313,3 +340,14 @@ alias gwX='git rm -rf'
 
 
 alias gitup='find . -type d -name .git -printf ''Updating repository %h\n'' -execdir git up \;'
+
+function magic { 
+  git co -b "${1// /_}" 
+  if [ ! $(git ci -am "$1") ]
+  then
+    format
+    git ci -am "$1"
+  fi
+  gpc
+  hub pull-request  -m "$1"
+}
