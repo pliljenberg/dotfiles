@@ -10,7 +10,7 @@ Upgrade to latest OsX version...
 1. Boot to Recovery OS
 2. Launch Terminal from the Utilities menu.
 3. Enter the following command:
-		$ csrutil enable
+		$ csrutil disable
 4. Boot
 
 ## Setup OS
@@ -18,7 +18,7 @@ Upgrade to latest OsX version...
 1. Open Terminal and run:
 		$ git
 
-2. Wait for Command Line Tools to install, then:
+2. Wait for Command Line Developer Tools to install, then:
 
 		$ git clone https://github.com/pliljenberg/dotfiles.git && cd dotfiles && ./install.sh
 

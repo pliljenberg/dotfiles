@@ -6,7 +6,7 @@ NC='\033[0m' # No Color
 
 COMPUTER_NAME="${1:-lambda}"
 echo -e "${GREEN}Will setup new computer with name: ${BLUE}${COMPUTER_NAME}${NC}"
-exit
+
 # Install brew
 echo -e "${GREEN}Installing brew${NC}"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
