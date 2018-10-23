@@ -76,7 +76,9 @@
 [credential]
 	helper = osxkeychain
 [user]
-	name = Peter Liljenberg
-	email = pliljenberg@gmail.com
+	name = Peter Svensson
+	email = peter@sparetimecoders.com
+[github]
+  user = pliljenberg
 [pull]
 	rebase = true
