@@ -22,3 +22,10 @@ Upgrade to latest OsX version...
 
 		$ git clone https://github.com/pliljenberg/dotfiles.git && cd dotfiles && ./install.sh
 
+
+## iTerm
+Open preferences (`CMD + ;`) and under `Profiles/General` edit `Send text as start`.
+    tmux attach -t init || tmux new -s init
+
+Under `Profiles/Colors` change `Color presets...` to `peter``
+
