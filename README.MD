@@ -18,7 +18,7 @@ Upgrade to latest OsX version...
 
 1. Open `Terminal` and run:
 
-		$ csrutil disable
+		$ git
 2. Wait for Command Line Developer Tools to install, then:
 
 		$ git clone https://github.com/pliljenberg/dotfiles.git && cd dotfiles && ./install.sh
