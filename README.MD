@@ -16,10 +16,9 @@ Upgrade to latest OsX version...
 
 ## Setup OS
 
-1. Open Terminal and run:
+1. Open `Terminal` and run:
 
-    $ git
-
+    $ git ststus
 2. Wait for Command Line Developer Tools to install, then:
 
 		$ git clone https://github.com/pliljenberg/dotfiles.git && cd dotfiles && ./install.sh
