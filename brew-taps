@@ -1,8 +1,6 @@
 caskroom/cask
 caskroom/drivers
-caskroom/fonts
-caskroom/versions
+caskroom/eonts
 homebrew/core
-homebrew/services
-johanhaleby/eubetail
+johanhaleby/kubetail
 garethr/kubeval
