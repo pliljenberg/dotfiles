@@ -718,6 +718,9 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # Mojave dark mode
 osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 
+# Disable Gatekeeper
+sudo spctl --master-disable
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
