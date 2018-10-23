@@ -1,15 +1,30 @@
 #!/usr/bin/env bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
+COMPUTER_NAME="${1:-lambda}"
+echo -e "${GREEN}Will setup new computer with name: ${BLUE}${COMPUTER_NAME}${NC}"
+exit
 # Install brew
+echo -e "${GREEN}Installing brew${NC}"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Passwordless sudo
+echo -e "${GREEN}Set passwordless sudo${NC}"
 echo "$(whoami)            ALL = (ALL) NOPASSWD: ALL" | sudo tee "/etc/sudoers.d/$(whoami)"
 # Install applications
+echo -e "${GREEN}Installing brew applications${NC}"
 ./brew.sh
-./zsh.sh
-./macos.sh axiom
 
+echo -e "${GREEN}Installing ZSH stuff${NC}"
+./zsh.sh
+
+echo -e "${GREEN}Customizing OS${NC}"
+./macos.sh "${COMPUTER_NAME}
+
+echo -e "${GREEN}Symlinking dotfile repo files${NC}"
 # Symlink dot-files
 for file in .*; do
 	[ -r "$file" ] && [ -f "$file" ] && ln -fs "$(pwd {BASH_SOURCE[0]})/$file" ~/$file;
@@ -20,7 +35,6 @@ ln -fs "$(pwd {BASH_SOURCE[0]})/.vim" ~/.vim;
 
 # Post installation
 echo "Load default color schema in iTerm2"
-echo "Configure atom"
 
 echo "Reboot :)"
 

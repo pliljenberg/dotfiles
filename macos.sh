@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ~/.macos — https://mths.be/macos
-COMPUTERNAME="${1:-lambda}"
+COMPUTERNAME="${1}"
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -387,7 +387,7 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
 # Reset Launchpad, but keep the desktop wallpaper intact
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
+find "${HOME}/Library/Application Support/Dock" -maxdepth 1 -name "*-*.db" -delete
 
 # Add iOS & Watch Simulator to Launchpad
 #sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
@@ -596,9 +596,6 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-# Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
-
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
@@ -718,6 +715,8 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 /usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:80:enabled NO" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:81:enabled NO" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
+# Mojave dark mode
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 
 ###############################################################################
 # Kill affected applications                                                  #
