@@ -20,7 +20,6 @@ Upgrade to latest OsX version...
 
     $ git
 
-
 2. Wait for Command Line Developer Tools to install, then:
 
 		$ git clone https://github.com/pliljenberg/dotfiles.git && cd dotfiles && ./install.sh
