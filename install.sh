@@ -22,7 +22,7 @@ echo -e "${GREEN}Installing ZSH stuff${NC}"
 ./zsh.sh
 
 echo -e "${GREEN}Customizing OS${NC}"
-./macos.sh "${COMPUTER_NAME}
+./macos.sh "${COMPUTER_NAME}"
 
 echo -e "${GREEN}Symlinking dotfile repo files${NC}"
 # Symlink dot-files
