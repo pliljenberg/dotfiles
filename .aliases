@@ -49,7 +49,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -104,16 +104,13 @@ alias reload="exec $SHELL -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-function de { docker exec -it $1 bash }
-
-function kc { kubectl --context adfenix-$1-k8s.adfenix.com ${@:2}}
-
-alias deploy ${ADFENIX_COURCE_DIR}/adfenix-build-tools/deploy
-
+# Format scala code
 function format { scalariform . -r -p=.scalariform.conf }
 
+# Open Github PullRequest view
 function pr { open 'https://github.com/pulls?user=adfenix' }
 
+# Login to AWS ECR
 function ecr  { eval $(aws ecr get-login | sed 's/-e none//g') }
 
 # Git
