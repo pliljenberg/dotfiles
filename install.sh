@@ -33,6 +33,9 @@ done
 # Symlink .vim
 ln -fs "$(pwd {BASH_SOURCE[0]})/.vim" ~/.vim;
 
+# Jabba
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+
 # Post installation
 echo "Load default color schema in iTerm2"
 
