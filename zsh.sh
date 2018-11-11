@@ -11,24 +11,10 @@ if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
   chsh -s /usr/local/bin/zsh;
 fi;
 
-
-# Setup prompt
-npm install --global pure-prompt
-
-# Docker completions
-mkdir -p ~/.zsh/completion
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion ~/.zsh/completion/_docker
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion ~/.zsh/completion/_docker-compose
-
-mkdir -p ~/.zfunctions
-
-# Symlink prompt-files
-for file in kubectl-prompt/*; do
-  filename=$(basename $file)
-	[ -r "$file" ] && [ -f "$file" ] && ln -fs "$(pwd {BASH_SOURCE[0]})/$file" ~/.zfunctions/$filename;
+# Install zprezto and powerline
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-for file in pure-prompt/*; do
-  filename="$(basename $file)"
-	[ -r "$file" ] && [ -f "$file" ] && ln -fs "$(pwd {BASH_SOURCE[0]})/$file" ~/.zfunctions/$filename;
-done

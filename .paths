@@ -10,6 +10,3 @@ export PATH=${PATH}:${BUILD_TOOLS_PATH}
 
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-if type kubectl > /dev/null ; then
-	source <(kubectl completion zsh)
-fi

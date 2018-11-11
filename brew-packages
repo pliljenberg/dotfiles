@@ -15,6 +15,7 @@ go
 grep
 gron
 httpie
+hub
 icu4c
 jq
 kops
