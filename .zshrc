@@ -33,3 +33,13 @@ fi
 
 # AWS
 source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+
+[ -s "/Users/peter/.jabba/jabba.sh" ] && source "/Users/peter/.jabba/jabba.sh"
+
+if [ -d "${HOME}/.kube/config.d" ];then
+  KUBECFG="${HOME}/.kube/config"
+  for file in ${HOME}/.kube/config.d/*.yaml; do
+    KUBECFG="${KUBECFG}:${file}"
+  done
+  export KUBECONFIG="${KUBECFG}"
+fi
