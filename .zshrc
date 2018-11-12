@@ -30,3 +30,6 @@ autoload -Uz compinit && compinit -i
 if type kubectl > /dev/null ; then
 	source <(kubectl completion zsh)
 fi
+
+# AWS
+source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
