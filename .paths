@@ -4,8 +4,7 @@ export PATH=/usr/local/opt/findutils/libexec/gnubin:${PATH}
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export PATH=${PATH}:~/source/tools/bin
 export CODE_DIR=~/source
-export ADFENIX_SOURCE_DIR=${CODE_DIR}/adfenix
-export BUILD_TOOLS_PATH=${ADFENIX_SOURCE_DIR}/adfenix-build-tools
+export BUILD_TOOLS_PATH=${CODE_DIR}/stc/build-tools
 export PATH=${PATH}:${BUILD_TOOLS_PATH}
 
 export GOPATH=~/go

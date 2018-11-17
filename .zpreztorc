@@ -15,4 +15,17 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt'
 
+# Prompt
 zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' show-return-val 'yes'
+
+# Tmux
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+zstyle ':prezto:module:tmux:session' name 'tmux'
+
+# Disable asking for confirmation
+zstyle ':prezto:module:utility' safe-ops 'no'
+
+# Disable autocorrect commands
+unsetopt CORRECT
