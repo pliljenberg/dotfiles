@@ -12,12 +12,7 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'git' \
   'syntax-highlighting' \
-  'history-substring-search' \
-  'prompt'
-
-# Prompt
-zstyle ':prezto:module:prompt' theme 'pure'
-zstyle ':prezto:module:prompt' show-return-val 'yes'
+  'history-substring-search' 
 
 # Tmux
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
@@ -26,6 +21,3 @@ zstyle ':prezto:module:tmux:session' name 'tmux'
 
 # Disable asking for confirmation
 zstyle ':prezto:module:utility' safe-ops 'no'
-
-# Disable autocorrect commands
-unsetopt CORRECT
