@@ -46,6 +46,8 @@ if [ -d "${HOME}/.kube/config.d" ];then
 fi
 
 
+eval "$(direnv hook zsh)"
+
 function powerline_precmd() {
 eval "$($GOPATH/bin/powerline-go -condensed -error $? -cwd-mode dironly -shell zsh -eval -cwd-max-depth 0 -modules cwd,dotenv,exit -modules-right aws,git,kube)"
     #eval "$($GOPATH/bin/powerline-go -error $? -condensed -cwd-mode plain  -newline -modules cwd -shell zsh -eval -modules-right git)"
