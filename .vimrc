@@ -37,7 +37,7 @@ set modelines=4
 " Enable line numbers
 set number
 " Enable syntax highlighting
-syntax on
+syntax enable
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
