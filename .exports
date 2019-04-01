@@ -18,6 +18,9 @@ export MANPAGER='less -X';
 
 export CODE_DIR=~/source
 
+export BUILD_TOOLS_PATH=${CODE_DIR}/stc/build-tools
+export GOPATH=~/go
+
 # For development
 export LOGFORMAT=TEXT
 export DB_HOST=localhost

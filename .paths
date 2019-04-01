@@ -1,14 +1,11 @@
 #!/usr/bin/env zsh
 
-export PATH=/usr/local/opt/grep/libexec/gnubin:${PATH}
-export PATH=/usr/local/opt/gnu-getopt/bin:${PATH}
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}
-export PATH=/usr/local/opt/findutils/libexec/gnubin:${PATH}
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-export PATH=${PATH}:~/source/tools/bin
-export CODE_DIR=~/source
-export BUILD_TOOLS_PATH=${CODE_DIR}/stc/build-tools
-export PATH=${PATH}:${BUILD_TOOLS_PATH}
-
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+prepend_path /usr/local/opt/grep/libexec/gnubin 
+prepend_path /usr/local/opt/gnu-getopt/bin 
+prepend_path /usr/local/opt/gnu-sed/libexec/gnubin 
+prepend_path /usr/local/opt/findutils/libexec/gnubin
+prepend_path /usr/local/opt/coreutils/libexec/gnubin
+prepend_path ~/bin
+append_path ~/source/tools/bin
+append_path ${BUILD_TOOLS_PATH}
+append_path ${GOPATH}/bin
