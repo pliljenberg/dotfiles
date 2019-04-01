@@ -36,8 +36,9 @@ ln -fs "$(pwd {BASH_SOURCE[0]})/.vim" ~/.vim;
 # Jabba
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 
-# Post installation
-echo "Load default color schema in iTerm2"
+# iTerm2
+ln -s "$(pwd {BASH_SOURCE[0]})/iterm2/peter.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/peter.json 
 
 echo "Reboot :)"
 
+## TODO FIX /etc/profiles path helper stuff!!!
