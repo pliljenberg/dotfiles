@@ -9,7 +9,7 @@ unsetopt CORRECT
 # Fish-like syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-for file in ~/.{paths,prompt,exports,aliases,functions,extra,auths,historyopts}; do
+for file in ~/.{functions,exports,paths,prompt,aliases,extra,auths,historyopts}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done
 
@@ -31,6 +31,7 @@ autoload -Uz compinit && compinit -i
 if type kubectl > /dev/null ; then
 	source <(kubectl completion zsh)
 fi
+
 
 # AWS
 source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
