@@ -24,3 +24,8 @@ export GOPATH=~/go
 # For development
 export LOGFORMAT=TEXT
 export DB_HOST=localhost
+export RABBITMQ_USERNAME=admin
+export RABBITMQ_PASSWORD=password
+export RABBITMQ_HOST=localhost
+
+export POSTGRES_HOST=localhost
