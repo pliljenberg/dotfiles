@@ -79,6 +79,6 @@
 	name = Peter Svensson
 	email = peter@sparetimecoders.com
 [github]
-  user = pliljenberg
+  user = peter-stc
 [pull]
 	rebase = true
