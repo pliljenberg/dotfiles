@@ -94,3 +94,5 @@ alias path='echo -e ${PATH//:/\\n}'
 alias gitup='find . -type d -name .git -printf ''Updating repository %h\n'' -execdir git up \;'
 
 alias bup='brew upgrade && for cask in $(brew cask list); do brew cask info $cask | head -3 | grep -v "^http" | sed -e "/^$cask: /s/$cask: \([^ ]*\).*$/\1/" -e "/^.*\/$cask/s/\/usr\/local\/Caskroom\/$cask\/\(.*\) (.*)$/\1/" | paste -d " " - - | read current installed && if [[ "$current" != "$installed" ]]; then echo "Upgrading $cask from $installed to $current"; brew cask upgrade --greedy $cask; else echo "$cask:$current is latest version"; fi; done'
+
+alias vl='vault login -address=https://vault.inteleon.io -method=github token="$GITHUB_TOKEN"'

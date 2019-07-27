@@ -26,7 +26,6 @@
     # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
     #whitespace = space-before-tab,indent-with-non-tab,trailing-space
 	editor = /usr/bin/vim
-	hooksPath = /Users/peter/source/adfenix/adfenix-build-tools/git-hooks
 
 [color]
     # Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -58,19 +57,6 @@
     remote = origin
     merge = refs/heads/master
 
-# URL shorthands
-[url "git@github.com:"]
-    insteadOf = "gh:"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-    insteadOf = "github:"
-[url "git@gist.github.com:"]
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-    insteadOf = "gist:"
 [push]
 	default = current
 [credential]
@@ -78,7 +64,8 @@
 [user]
 	name = Peter Svensson
 	email = peter@sparetimecoders.com
-[github]
-  user = peter-stc
+	signingkey = 09220C44861C7C8D
+#[github]
+#  user = peter-stc
 [pull]
 	rebase = true
