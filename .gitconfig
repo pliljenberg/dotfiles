@@ -69,3 +69,5 @@
 #  user = peter-stc
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true
