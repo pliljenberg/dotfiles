@@ -29,3 +29,5 @@ export RABBITMQ_PASSWORD=password
 export RABBITMQ_HOST=localhost
 
 export POSTGRES_HOST=localhost
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home

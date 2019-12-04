@@ -67,3 +67,8 @@ if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
 
+alias mysql='mysql --user=root --host=127.0.0.1 --port=3306 -p'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/peter/.sdkman"
+[[ -s "/Users/peter/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/peter/.sdkman/bin/sdkman-init.sh"
