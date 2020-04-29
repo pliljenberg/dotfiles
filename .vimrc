@@ -2,6 +2,8 @@
 set background=dark
 colorscheme solarized8
 
+set timeoutlen=1000 ttimeoutlen=0
+
 " Make Vim more useful
 set nocompatible
 " Enhance command-line completion
