@@ -74,3 +74,5 @@
 
 [credential "https://github.com"]
 	peter-svensson = 9q9ITXTnwBqs
+[remote "origin"]
+	prune = true
