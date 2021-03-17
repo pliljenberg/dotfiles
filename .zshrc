@@ -28,6 +28,10 @@ autoload -U promptinit; promptinit
 autoload -U colors; colors
 autoload -Uz compinit && compinit -i
 
+if type stern > /dev/null ; then
+  source <(stern --completion=zsh)
+fi
+
 if type kubectl > /dev/null ; then
 	source <(kubectl completion zsh)
 fi
