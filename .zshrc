@@ -78,3 +78,11 @@ export SDKMAN_DIR="/Users/peter/.sdkman"
 [[ -s "/Users/peter/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/peter/.sdkman/bin/sdkman-init.sh"
 
 export JAVA_OPTS="-Xmx4096m -XX:MaxPermSize=2048m"
+
+# AWS SSO
+sso(){
+  unset AWS_PROFILE
+  export AWS_PROFILE=$1
+  aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)
+  eval $(aws-export-credentials --env-export)
+}

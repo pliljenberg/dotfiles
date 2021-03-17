@@ -39,6 +39,10 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 # iTerm2
 ln -s "$(pwd {BASH_SOURCE[0]})/iterm2/peter.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/peter.json 
 
+
+echo -e "${GREEN}Setting up AWS SSO${NC}"
+sudo ./aws_sso.sh "${COMPUTER_NAME}"
+
 echo "Reboot :)"
 
 ## TODO FIX /etc/profiles path helper stuff!!!
