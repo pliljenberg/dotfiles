@@ -27,6 +27,7 @@
     #whitespace = space-before-tab,indent-with-non-tab,trailing-space
   	editor = /usr/bin/vim
     pager = delta --theme='Dracula' --dark
+    hooksPath = /Users/peter/source/dotfiles/.git-hooks
 [interactive]
      diffFilter = delta --color-only --dark
 [color]
