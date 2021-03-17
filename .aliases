@@ -93,11 +93,10 @@ alias path='echo -e ${PATH//:/\\n}'
 
 alias gitup='find . -type d -name .git -printf ''Updating repository %h\n'' -execdir git up \;'
 
-alias bup='brew upgrade && for cask in $(brew cask list); do brew cask info $cask | head -3 | grep -v "^http" | sed -e "/^$cask: /s/$cask: \([^ ]*\).*$/\1/" -e "/^.*\/$cask/s/\/usr\/local\/Caskroom\/$cask\/\(.*\) (.*)$/\1/" | paste -d " " - - | read current installed && if [[ "$current" != "$installed" ]]; then echo "Upgrading $cask from $installed to $current"; brew cask upgrade --greedy $cask; else echo "$cask:$current is latest version"; fi; done'
+alias bup='brew upgrade && for cask in $(brew list --cask); do brew info --cask $cask | head -3 | grep -v "^http" | sed -e "/^$cask: /s/$cask: \([^ ]*\).*$/\1/" -e "/^.*\/$cask/s/\/usr\/local\/Caskroom\/$cask\/\(.*\) (.*)$/\1/" | paste -d " " - - | read current installed && if [ "$current" != "$installed" ] && [ "$cask" != "google-chrome" ]; then echo "Upgrading $cask from $installed to $current"; brew upgrade --cask --greedy $cask; else echo "$cask:$current is latest version"; fi; done'
 
-alias vl='vault login -address=https://vault.inteleon.io -method=github token="$GITHUB_TOKEN"'
 alias kc=kubectl
-alias kcl='kubectl --context docker-for-desktop'
+alias kcl='kubectl --context docker-desktop'
 alias kct='kubectl --context matchi-test.k8s.local'
 alias kcp='kubectl --context matchi-prod.k8s.local'
 alias kcte='kubectl --context gke_timeedit-production_europe-west1-c_production-external'
