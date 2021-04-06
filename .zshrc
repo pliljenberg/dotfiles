@@ -1,4 +1,5 @@
 # Source Prezto.
+unsetopt GLOBAL_RCS
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
