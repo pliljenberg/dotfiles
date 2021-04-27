@@ -33,15 +33,12 @@ done
 # Symlink .vim
 ln -fs "$(pwd {BASH_SOURCE[0]})/.vim" ~/.vim;
 
-# Jabba
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
-
 # iTerm2
 ln -s "$(pwd {BASH_SOURCE[0]})/iterm2/peter.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/peter.json 
 
 
 echo -e "${GREEN}Setting up AWS SSO${NC}"
-sudo ./aws_sso.sh "${COMPUTER_NAME}"
+sudo ./aws_sso.sh
 
 echo "Reboot :)"
 

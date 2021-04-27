@@ -37,11 +37,7 @@ if type kubectl > /dev/null ; then
 	source <(kubectl completion zsh)
 fi
 
-
-# AWS
 source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
-
-[ -s "/Users/peter/.jabba/jabba.sh" ] && source "/Users/peter/.jabba/jabba.sh"
 
 if [ -d "${HOME}/.kube/config.d" ];then
   KUBECFG="${HOME}/.kube/config"
@@ -73,12 +69,6 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 alias mysql='mysql --user=root --host=127.0.0.1 --port=3306 -p'
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/peter/.sdkman"
-[[ -s "/Users/peter/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/peter/.sdkman/bin/sdkman-init.sh"
-
-export JAVA_OPTS="-Xmx4096m -XX:MaxPermSize=2048m"
 
 # AWS SSO
 sso(){

@@ -70,6 +70,10 @@
 	peter-svensson = 9q9ITXTnwBqs
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "git@ssh.dev.azure.com:v3/skfdc/REP-SW/terraform-modules"]
+  insteadOf = https://dev.azure.com/skfdc/REP-SW/_git/terraform-modules
+[url "git@ssh.dev.azure.com:v3/skfdc/"]
+  insteadOf = https://dev.azure.com/skfdc/
 [fetch]
 	prune = true
 [init]

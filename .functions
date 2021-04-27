@@ -18,14 +18,8 @@ b64d() {
   echo "${1}" | base64 -d
 }
 
-# Format scala code
-function format { scalariform . -r -p=.scalariform.conf }
-
 # Open Github PullRequest view
 function pr { open 'https://github.com/pulls?user=inteleon' }
-
-# Login to AWS ECR
-function ecr  { eval $(aws ecr get-login --no-include-email) }
 
 function magic {
   git co -b "${1// /_}"

@@ -6,6 +6,7 @@ prepend_path /usr/local/opt/gnu-sed/libexec/gnubin
 prepend_path /usr/local/opt/findutils/libexec/gnubin
 prepend_path /usr/local/opt/coreutils/libexec/gnubin
 prepend_path ~/bin
+prepend_path ~/.local/bin
 prepend_path /usr/local/opt/node@12/bin
 append_path ${GOPATH}/bin
 append_path /usr/local/opt/mysql-client/bin
