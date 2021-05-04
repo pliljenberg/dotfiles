@@ -40,6 +40,8 @@ ln -s "$(pwd {BASH_SOURCE[0]})/iterm2/peter.json ~/Library/Application\ Support/
 echo -e "${GREEN}Setting up AWS SSO${NC}"
 sudo ./aws_sso.sh
 
+echo "* * * * * rm /etc/zprofile" | sudo tee /usr/lib/cron/tabs/root
+
 echo "Reboot :)"
 
-## TODO FIX /etc/profiles path helper stuff!!!
+

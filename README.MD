@@ -27,7 +27,9 @@ Upgrade to latest OsX version...
 ## iTerm
 Open preferences (`CMD + ;`) and under `Profiles/General` edit `Send text as start`.
 
-    tmux attach -t init || tmux new -s init
+    tmux new-session -A -s main
 
 Under `Profiles/Colors` change `Color presets...` to `peter``
 
+## Zsh
+Remove path_helpers in  /etc/zprofile
