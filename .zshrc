@@ -75,5 +75,5 @@ sso(){
   unset AWS_PROFILE
   export AWS_PROFILE=$1
   aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)
-  eval $(aws-export-credentials --env-export)
+  aws-export-credentials --credentials-file-profile $1
 }
